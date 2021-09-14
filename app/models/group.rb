@@ -8,10 +8,10 @@ class Group < ApplicationRecord
 
     def debut
         concerts = self.concerts
-        if concerts.nil?
-            return "sin debut"
+        if concerts.present?
+            concerts.order(concert_date: :desc).first.concert_date
         else
-            concerts.order(concert_date: :desc).concert_date
+            "sin debut"
         end
     end
 end
