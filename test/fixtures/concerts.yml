@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  location: MyString
+  date: 2021-09-13
+  group: one
+
+two:
+  location: MyString
+  date: 2021-09-13
+  group: two
