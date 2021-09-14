@@ -21,6 +21,12 @@
     <%= form.date_select :concert_date %>
   </div>
 
+
+  <div class="field">
+    <%= form.label :audience %>
+    <%= form.number_field :audience %>
+  </div>
+
   <div class="field">
     <%= form.label :group_id %>
     <%= form.select :group_id, options_from_collection_for_select(@groups, :id, :name)%>

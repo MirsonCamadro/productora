@@ -7,11 +7,17 @@ class Group < ApplicationRecord
     end
 
     def debut
+        # concerts = self.concerts
+        # if concerts.present?
+        #     concerts.order(concert_date: :desc).first.concert_date
+        # else
+        #     "sin debut"
+        # end
+        self.concerts.present? ? self.concerts.order(concert_date: :desc).first.concert_date : "sin debut" 
+    end
+
+    def audience
         concerts = self.concerts
-        if concerts.present?
-            concerts.order(concert_date: :desc).first.concert_date
-        else
-            "sin debut"
-        end
+        concerts.sum{|x| x.audience}
     end
 end
